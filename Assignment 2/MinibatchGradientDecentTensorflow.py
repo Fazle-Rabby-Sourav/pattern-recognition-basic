@@ -16,7 +16,7 @@ def create_mini_batches(X, z, batch_size):
     mini_batches = []
     data = np.hstack((X, z))
     np.random.shuffle(data)
-    n_minibatches = data.shape[0]               # batch_size
+    n_minibatches = data.shape[0] // batch_size
 
     for i in range(n_minibatches):
         mini_batch = data[i * batch_size:(i + 1)*batch_size, :]
